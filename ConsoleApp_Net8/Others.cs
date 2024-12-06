@@ -13,7 +13,7 @@ using System.Diagnostics;
 
 
 namespace ConsoleApp_Net8
-{    
+{
     public class OthersProgram
     {
         public static int getTotalX(List<int> a, List<int> b)
@@ -1081,8 +1081,14 @@ namespace ConsoleApp_Net8
             return isLeapYear;
         }
 
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
+
+            Console.WriteLine("Hello, World!");
+            RestAPI api = new RestAPI();
+            var aaa = api.GetRestData();
+            aaa.Wait();
+
             //######################## INI #################################################################################
             Eurocorp_test.Fibonacci(30);
             //####################### FIN ##################################################################################
@@ -1655,438 +1661,438 @@ namespace ConsoleApp_Net8
 }
 
 
-    //using System;
-    //using System.Collections.Generic;
-    //using System.Linq;
-    //using System.Text;
-    //using System.Globalization;
-
-    //namespace TEST
-    //{
-    //    class Program
-    //    {
-    //        public enum EnumEstadoDte
-    //        {
-    //            Recibido = 1,
-    //            Validado = 2,
-    //            EnviadoErp = 3,
-    //            Rechazado = 4,
-    //            VBPago = 5,
-    //            PagoRealizado = 6,
-    //            PagoRechazado = 7,
-    //            RechazadoDeAprobacion = 8
-    //        }
-
-    //        static double recuFactorial(int n, double acum)
-    //        {
-    //            if (n >= 1)
-    //            {
-    //                acum = acum + (n * recuFactorial(n - 1, acum));
-    //                return acum;
-    //            }
-    //            else
-    //                return 1;
-    //        }
-
-    //        static void Main(string[] args)
-    //        {
-    //            // Suma de los naturales de 3 y 5 entre 1 y 999
-    //            //int acum = 0;
-    //            //for (int u = 1; u < 1000; u++)
-    //            //{
-    //            //    if (u % 3 == 0 || u % 5 == 0)
-    //            //    {
-    //            //        Console.WriteLine(u);
-    //            //        acum += u;
-    //            //    }
-    //            //}
-
-    //            //Console.WriteLine("SUMA = " + acum);
-    //            //Console.ReadKey();
-
-    //            // FIN problema CALCULO DE NUMEROS VISIBLES POR 3 Y 5 ================================
-
-    //            // PROBLEMA 2 - Calculo serie de Fibonacci 
-
-    //            //decimal temp = 0;
-    //            ////Console.WriteLine("Ingrese el número de numeros de Fibonacci que desea mostrar");
-    //            ////limite = int.Parse(Console.ReadLine());
-    //            //decimal limite = 1000;
-    //            //decimal suma = 0;
-    //            //decimal sumaAnt1 = 0;
-    //            //decimal sumaAnt2 = 0;
-    //            //decimal contador = 0;
-    //            //decimal sumaant = 0;
-    //            //decimal sumPares = 0;
-    //            //for (decimal k = 2; k <= 100; k++)
-    //            //{
-    //            //    if (k == 1)
-    //            //    {
-    //            //        suma = 0;
-    //            //        sumaAnt1 = 0;
-    //            //        sumaAnt2 = 0;
-    //            //    }
-    //            //    else if (k == 2)
-    //            //    {
-    //            //        suma = 1;
-    //            //        sumaAnt1 = suma;
-    //            //        sumaAnt2 = 0;
-    //            //    }
-    //            //    else
-    //            //    {
-    //            //        suma = sumaAnt1 + sumaAnt2;
-    //            //        sumaAnt2 = sumaAnt1;
-    //            //        sumaAnt1 = suma;
-    //            //    }
-
-    //            //    if (sumaant == suma)
-    //            //        continue; // se salta el 1 identico
-    //            //    else
-    //            //    {
-    //            //        sumaant = suma;
-
-    //            //        if (suma > 4000000)
-    //            //            break;
-
-    //            //        contador++;
-    //            //        if (contador > limite)
-    //            //            break;
-    //            //    }
-
-    //            //    Console.WriteLine(suma);
-
-    //            //    if (suma % 2 == 0)
-    //            //        sumPares += suma;
-    //            //}
-    //            //Console.WriteLine("SUMA PARES = " + sumPares);
-    //            //Console.ReadKey();
+//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Globalization;
+
+//namespace TEST
+//{
+//    class Program
+//    {
+//        public enum EnumEstadoDte
+//        {
+//            Recibido = 1,
+//            Validado = 2,
+//            EnviadoErp = 3,
+//            Rechazado = 4,
+//            VBPago = 5,
+//            PagoRealizado = 6,
+//            PagoRechazado = 7,
+//            RechazadoDeAprobacion = 8
+//        }
+
+//        static double recuFactorial(int n, double acum)
+//        {
+//            if (n >= 1)
+//            {
+//                acum = acum + (n * recuFactorial(n - 1, acum));
+//                return acum;
+//            }
+//            else
+//                return 1;
+//        }
+
+//        static void Main(string[] args)
+//        {
+//            // Suma de los naturales de 3 y 5 entre 1 y 999
+//            //int acum = 0;
+//            //for (int u = 1; u < 1000; u++)
+//            //{
+//            //    if (u % 3 == 0 || u % 5 == 0)
+//            //    {
+//            //        Console.WriteLine(u);
+//            //        acum += u;
+//            //    }
+//            //}
+
+//            //Console.WriteLine("SUMA = " + acum);
+//            //Console.ReadKey();
+
+//            // FIN problema CALCULO DE NUMEROS VISIBLES POR 3 Y 5 ================================
+
+//            // PROBLEMA 2 - Calculo serie de Fibonacci 
+
+//            //decimal temp = 0;
+//            ////Console.WriteLine("Ingrese el número de numeros de Fibonacci que desea mostrar");
+//            ////limite = int.Parse(Console.ReadLine());
+//            //decimal limite = 1000;
+//            //decimal suma = 0;
+//            //decimal sumaAnt1 = 0;
+//            //decimal sumaAnt2 = 0;
+//            //decimal contador = 0;
+//            //decimal sumaant = 0;
+//            //decimal sumPares = 0;
+//            //for (decimal k = 2; k <= 100; k++)
+//            //{
+//            //    if (k == 1)
+//            //    {
+//            //        suma = 0;
+//            //        sumaAnt1 = 0;
+//            //        sumaAnt2 = 0;
+//            //    }
+//            //    else if (k == 2)
+//            //    {
+//            //        suma = 1;
+//            //        sumaAnt1 = suma;
+//            //        sumaAnt2 = 0;
+//            //    }
+//            //    else
+//            //    {
+//            //        suma = sumaAnt1 + sumaAnt2;
+//            //        sumaAnt2 = sumaAnt1;
+//            //        sumaAnt1 = suma;
+//            //    }
+
+//            //    if (sumaant == suma)
+//            //        continue; // se salta el 1 identico
+//            //    else
+//            //    {
+//            //        sumaant = suma;
+
+//            //        if (suma > 4000000)
+//            //            break;
+
+//            //        contador++;
+//            //        if (contador > limite)
+//            //            break;
+//            //    }
+
+//            //    Console.WriteLine(suma);
+
+//            //    if (suma % 2 == 0)
+//            //        sumPares += suma;
+//            //}
+//            //Console.WriteLine("SUMA PARES = " + sumPares);
+//            //Console.ReadKey();
 
-    //            // FIN PROBLEMA 2 - FIBONACCI ================================
+//            // FIN PROBLEMA 2 - FIBONACCI ================================
 
-    //            // PROBLEMA 3 - CALCULO FACTORIAL
-    //            //int h = 0;
-    //            //int aux = 1;
-    //            //double sal = recuFactorial(100, 0);
+//            // PROBLEMA 3 - CALCULO FACTORIAL
+//            //int h = 0;
+//            //int aux = 1;
+//            //double sal = recuFactorial(100, 0);
 
-    //            //NumberFormatInfo setPrecision = new NumberFormatInfo();
+//            //NumberFormatInfo setPrecision = new NumberFormatInfo();
 
-    //            //setPrecision.NumberDecimalDigits = 99;
+//            //setPrecision.NumberDecimalDigits = 99;
 
-    //            //Console.Write(sal.ToString("N", setPrecision)); //Should write 1.23
+//            //Console.Write(sal.ToString("N", setPrecision)); //Should write 1.23
 
 
-    //            //string ssalida = sal.ToString();
-    //            //string[] arr = new string[ssalida.Length];
+//            //string ssalida = sal.ToString();
+//            //string[] arr = new string[ssalida.Length];
 
-    //            //string[] arrString = ssalida.ToCharArray().Select(c => c.ToString()).ToArray();
-    //            //decimal ggg = 0;
-    //            //for (int u = 0; u < arrString.Length; u++)
-    //            //{
-    //            //    ggg += Convert.ToDecimal(arrString[u]);
+//            //string[] arrString = ssalida.ToCharArray().Select(c => c.ToString()).ToArray();
+//            //decimal ggg = 0;
+//            //for (int u = 0; u < arrString.Length; u++)
+//            //{
+//            //    ggg += Convert.ToDecimal(arrString[u]);
 
-    //            //}
+//            //}
 
-    //            //Console.WriteLine(ggg);
-    //            //Console.ReadKey();
+//            //Console.WriteLine(ggg);
+//            //Console.ReadKey();
 
-    //            //// FIN PROBLEMA 3 - CALCULO FACTORIAL =======================================
+//            //// FIN PROBLEMA 3 - CALCULO FACTORIAL =======================================
 
 
-    //            //System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
+//            //System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US");
 
-    //            //string valor = "12227446.1936";
-    //            //decimal ccc = Convert.ToDecimal(valor.Replace(",", "."));
+//            //string valor = "12227446.1936";
+//            //decimal ccc = Convert.ToDecimal(valor.Replace(",", "."));
 
 
 
-    //            // PRUEBA N° 4 - Calculo numeros primos   =======================================
+//            // PRUEBA N° 4 - Calculo numeros primos   =======================================
 
-    //            //int maxPrime = 0;
-    //            //int cont = 0; //un contador, el cual si es mayor a dos indica que el numero no es primo
-    //            //for (int i = 1; i <= 13195; i++)
-    //            //{  //apertura del for1
-    //            //    for (int j = 1; j <= i; j++)
-    //            //    {   //apertura for2
+//            //int maxPrime = 0;
+//            //int cont = 0; //un contador, el cual si es mayor a dos indica que el numero no es primo
+//            //for (int i = 1; i <= 13195; i++)
+//            //{  //apertura del for1
+//            //    for (int j = 1; j <= i; j++)
+//            //    {   //apertura for2
 
-    //            //        if (i % j == 0)
-    //            //        {
-    //            //            cont = cont + 1;
+//            //        if (i % j == 0)
+//            //        {
+//            //            cont = cont + 1;
 
-    //            //            if (cont > 2)
-    //            //            { // si ya es mayor a 2, abandona el numero actual (no es primo) ya que ya van mas de dos divisiones por dos numeros distintos
+//            //            if (cont > 2)
+//            //            { // si ya es mayor a 2, abandona el numero actual (no es primo) ya que ya van mas de dos divisiones por dos numeros distintos
 
-    //            //                //cont = 0;
-    //            //                break;
-    //            //            }
-    //            //        }
-    //            //    }
+//            //                //cont = 0;
+//            //                break;
+//            //            }
+//            //        }
+//            //    }
 
 
-    //            //    // si ya es mayor a 2, abandona el numero actual (no es primo) ya que ya van mas de dos divisiones por dos numeros distintos
-    //            //    // en caso que sea menor o igual, es primo (divisor por 1 si es uno, u divisor por uno y por si mismo si es un numero > 1)
-    //            //    if ((i == 1 && cont == 1) || (i > 1 && cont == 2))
-    //            //    {
-    //            //          Console.WriteLine(i);  // encontramos un primo!
-    //            //        if (600851475143 % i == 0)
-    //            //            maxPrime = i;
+//            //    // si ya es mayor a 2, abandona el numero actual (no es primo) ya que ya van mas de dos divisiones por dos numeros distintos
+//            //    // en caso que sea menor o igual, es primo (divisor por 1 si es uno, u divisor por uno y por si mismo si es un numero > 1)
+//            //    if ((i == 1 && cont == 1) || (i > 1 && cont == 2))
+//            //    {
+//            //          Console.WriteLine(i);  // encontramos un primo!
+//            //        if (600851475143 % i == 0)
+//            //            maxPrime = i;
 
 
-    //            //    }      //cierre for2
-    //            //    cont = 0;               //igualamos a cero para hacer otra evaluacion con otro numero
+//            //    }      //cierre for2
+//            //    cont = 0;               //igualamos a cero para hacer otra evaluacion con otro numero
 
 
-    //            //}//cierre del for1
+//            //}//cierre del for1
 
-    //            //Console.WriteLine(maxPrime);
+//            //Console.WriteLine(maxPrime);
 
-    //            //Console.ReadKey();
+//            //Console.ReadKey();
 
-    //            // FIN PRUEBA N° 4 - Calculo numeros primos   =======================================
+//            // FIN PRUEBA N° 4 - Calculo numeros primos   =======================================
 
 
-    //            //// PRUEBA N° 5 - Calculo de palindromos  =======================================
+//            //// PRUEBA N° 5 - Calculo de palindromos  =======================================
 
-    //            //int tmpPal = 0;
-    //            //int jtmp = 0;
-    //            //int ktmp = 0;
-    //            ////EsPalindrome(90109);
+//            //int tmpPal = 0;
+//            //int jtmp = 0;
+//            //int ktmp = 0;
+//            ////EsPalindrome(90109);
 
-    //            //for (int j = 100; j < 1000; j++)
-    //            //{
-    //            //    for (int k = 100; k < 1000; k++)
-    //            //    {
-    //            //        if (EsPalindrome(j * k))
-    //            //        {
-    //            //            if (j * k > tmpPal)
-    //            //            {
-    //            //                tmpPal = j * k;  //deja al ultimo
-    //            //                jtmp = j;
-    //            //                ktmp = k;
-    //            //                Console.WriteLine("P --> " + tmpPal);
-    //            //            }
-    //            //        }
-    //            //    }
-    //            //}
+//            //for (int j = 100; j < 1000; j++)
+//            //{
+//            //    for (int k = 100; k < 1000; k++)
+//            //    {
+//            //        if (EsPalindrome(j * k))
+//            //        {
+//            //            if (j * k > tmpPal)
+//            //            {
+//            //                tmpPal = j * k;  //deja al ultimo
+//            //                jtmp = j;
+//            //                ktmp = k;
+//            //                Console.WriteLine("P --> " + tmpPal);
+//            //            }
+//            //        }
+//            //    }
+//            //}
 
-    //            //Console.WriteLine("Maxima palindrome --> " + tmpPal);
-    //            //Console.ReadKey();
-    //            // FIN PRUEBA N° 5 - Calculo de palindromos =======================================
+//            //Console.WriteLine("Maxima palindrome --> " + tmpPal);
+//            //Console.ReadKey();
+//            // FIN PRUEBA N° 5 - Calculo de palindromos =======================================
 
-    //            // PRUEBA N° 6 - Multiplo mas pequeño =======================================
-    //            //for (long k = 1; k < 10000000000; k++)
-    //            //{
-    //            //    if (IsDivisible(k, 1, 20))
-    //            //    {
-    //            //        Console.WriteLine("Menor --> " + k);
-    //            //        break;
-    //            //    }
-    //            //}
+//            // PRUEBA N° 6 - Multiplo mas pequeño =======================================
+//            //for (long k = 1; k < 10000000000; k++)
+//            //{
+//            //    if (IsDivisible(k, 1, 20))
+//            //    {
+//            //        Console.WriteLine("Menor --> " + k);
+//            //        break;
+//            //    }
+//            //}
 
-    //            //Console.ReadKey();
+//            //Console.ReadKey();
 
-    //            // FIN PRUEBA N° 6 - Diferencia de la suma de los cuadrados =======================================
+//            // FIN PRUEBA N° 6 - Diferencia de la suma de los cuadrados =======================================
 
-    //            // PRUEBA N° 7 - Diferencia de la suma de los cuadrados =======================================
-    //            //long suma = 0;
-    //            //decimal potencia = 0;
-    //            //decimal sumaIndivisual = 0;
+//            // PRUEBA N° 7 - Diferencia de la suma de los cuadrados =======================================
+//            //long suma = 0;
+//            //decimal potencia = 0;
+//            //decimal sumaIndivisual = 0;
 
-    //            //for (long k = 1; k < 101; k++)
-    //            //{
-    //            //    decimal actualElevado = (decimal)Math.Pow(k, 2);
-    //            //    sumaIndivisual += actualElevado;
-    //            //    suma += k;
-    //            //}
+//            //for (long k = 1; k < 101; k++)
+//            //{
+//            //    decimal actualElevado = (decimal)Math.Pow(k, 2);
+//            //    sumaIndivisual += actualElevado;
+//            //    suma += k;
+//            //}
 
-    //            //potencia = (decimal)Math.Pow(suma, 2);
+//            //potencia = (decimal)Math.Pow(suma, 2);
 
-    //            //Console.WriteLine("DIFERENCIA = " + (potencia - sumaIndivisual));
-    //            //Console.ReadKey();
+//            //Console.WriteLine("DIFERENCIA = " + (potencia - sumaIndivisual));
+//            //Console.ReadKey();
 
-    //            // FIN PRUEBA N° 7 - Diferencia de la suma de los cuadrados =======================================
+//            // FIN PRUEBA N° 7 - Diferencia de la suma de los cuadrados =======================================
 
 
 
-    //            string valorCampo = "                                                                                ";
+//            string valorCampo = "                                                                                ";
 
-    //            string ValorTxt = valorCampo.PadLeft(Convert.ToInt32(80), ' ');
+//            string ValorTxt = valorCampo.PadLeft(Convert.ToInt32(80), ' ');
 
-    //            if (!ValorTxt.Trim().Equals(""))
-    //                throw new Exception("Ok");
-    //            else
-    //                throw new Exception("error");
+//            if (!ValorTxt.Trim().Equals(""))
+//                throw new Exception("Ok");
+//            else
+//                throw new Exception("error");
 
-    //            string sDteRutBolElc = "96705150";
-    //            string sRutReceptor = sDteRutBolElc.Replace(".", "");
-    //            sRutReceptor = sRutReceptor.Substring(0, sRutReceptor.Length - 2);
-    //            string sDigitoVerificadorReceptor = sDteRutBolElc.Substring(sDteRutBolElc.Length - 1, 1);
+//            string sDteRutBolElc = "96705150";
+//            string sRutReceptor = sDteRutBolElc.Replace(".", "");
+//            sRutReceptor = sRutReceptor.Substring(0, sRutReceptor.Length - 2);
+//            string sDigitoVerificadorReceptor = sDteRutBolElc.Substring(sDteRutBolElc.Length - 1, 1);
 
-    //            char sss = Digito_Verificador("11-6");
+//            char sss = Digito_Verificador("11-6");
 
-    //            string texto = "1/Autorefractometro Portátil/6427476";
-    //            string[] linea = null;
-    //            double cantidad = 0d;
-    //            double precio = 0d;
-    //            long totalLinea = 0;
+//            string texto = "1/Autorefractometro Portátil/6427476";
+//            string[] linea = null;
+//            double cantidad = 0d;
+//            double precio = 0d;
+//            long totalLinea = 0;
 
-    //            if (LineaTextoValida(texto))
-    //            {
+//            if (LineaTextoValida(texto))
+//            {
 
-    //                linea = texto.Split('/');
-    //                cantidad = double.Parse(linea[0]);
-    //                precio = double.Parse(linea[1]);
-    //                totalLinea = Convert.ToInt64(cantidad * precio);  //Correcciones SCM 20-07-2017 ticket 32211 ATM 
+//                linea = texto.Split('/');
+//                cantidad = double.Parse(linea[0]);
+//                precio = double.Parse(linea[1]);
+//                totalLinea = Convert.ToInt64(cantidad * precio);  //Correcciones SCM 20-07-2017 ticket 32211 ATM 
 
-    //            }
+//            }
 
 
-    //            string tmp = "28-09-2019 23:13:30";
+//            string tmp = "28-09-2019 23:13:30";
 
-    //            DateTime? salida = null;
-    //            DateTime dTemp;
-    //            bool success = DateTime.TryParse(tmp, out dTemp);
-    //            if (success) salida = dTemp;
+//            DateTime? salida = null;
+//            DateTime dTemp;
+//            bool success = DateTime.TryParse(tmp, out dTemp);
+//            if (success) salida = dTemp;
 
-    //            DateTime FechaAcuseRM = DateTime.ParseExact(tmp, "dd-MM-yyyy hh:mm:ss", CultureInfo.InvariantCulture);
+//            DateTime FechaAcuseRM = DateTime.ParseExact(tmp, "dd-MM-yyyy hh:mm:ss", CultureInfo.InvariantCulture);
 
 
-    //            string llave = Guid.NewGuid().ToString();
+//            string llave = Guid.NewGuid().ToString();
 
-    //            string nn = Enum.GetName(typeof(EnumEstadoDte), 3);
+//            string nn = Enum.GetName(typeof(EnumEstadoDte), 3);
 
-    //            // 2019-06-22 08:24:24.000
-    //            DateTime frSII = new DateTime(2019, 6, 22, 8, 24, 24);
+//            // 2019-06-22 08:24:24.000
+//            DateTime frSII = new DateTime(2019, 6, 22, 8, 24, 24);
 
-    //            // 2019-07-09 09:43:32.9588
-    //            DateTime ahora = new DateTime(2019, 7, 9, 9, 43, 32);
+//            // 2019-07-09 09:43:32.9588
+//            DateTime ahora = new DateTime(2019, 7, 9, 9, 43, 32);
 
-    //            double diasDesdeRecepcionSii = Math.Round((ahora - frSII).TotalDays, 0);
-    //            if (diasDesdeRecepcionSii >= 8)
-    //            {
-    //                // _gestorLog.RegistrarLog(Enumeradores.EnumTiposLog.Info, "ObtieneFechaAcuseReciboMercancia IdDte[" + dte.IdDte + "] tiene [" + diasDesdeRecepcionSii + "] después de la recepción en el SII. FechaRecepcionSII [" + dte.FechaRecepcionSII + "]");
-    //                //Al octavo día se asume aceptada si no hay reclamo
-    //                var fechaAceptacionAutomatica = frSII.AddDays(8);
-    //                //Si el día de aceptación automática es específicamente el día 31 del mes, la contabilización es al mes siguiente,
-    //                //por lo tanto se retorna un día adicional. Día 1 del mes siguiente
-    //                if (fechaAceptacionAutomatica.Day == 31)
-    //                {
-    //                    DateTime fechaAceptacionAutomaticaNew = fechaAceptacionAutomatica.AddDays(1);
-    //                    //_gestorLog.RegistrarLog(Enumeradores.EnumTiposLog.Info, "ObtieneFechaAcuseReciboMercancia IdDte[" + dte.IdDte + "] - Se asigna fechaAceptacionAutomatica a [" + fechaAceptacionAutomaticaNew + "] dado que fechaAceptacionAutomatica [" + fechaAceptacionAutomatica + "] cae 31 del mes");
-
-    //                    //return fechaAceptacionAutomaticaNew;
-    //                }
-
-    //                //return fechaAceptacionAutomatica;
-    //            }
-    //        }
-
-    //        public static bool IsDivisible(long Number, int min, int max)
-    //        {
-    //            for (int j = min; j < max + 1; j++)
-    //            {
-    //                if (Number % j != 0)
-    //                    return false;
-    //            }
-
-    //            return true;
-    //        }
-
-
-
-
-    //        //WLS 07-04-2017: Se debe validar el formato de la linea de texto para el reemplazo del ITEM.
-    //        /// <summary>
-    //        /// Método para validación 
-    //        /// </summary>
-    //        /// <param name="lineaTexto"></param>
-    //        /// <returns></returns>
-    //        public static bool LineaTextoValida(string lineaTexto)
-    //        {
-    //            bool flag = false;
-    //            string[] textoSeparado = null;
-    //            try
-    //            {
-    //                //Primero se va a validar la cantidad de separadores de texto. el Formato es NN/PPPPPP/Descripcion
-    //                textoSeparado = lineaTexto.Split('/');
-    //                //Validación de separador
-    //                if (textoSeparado.Length == 3)
-    //                {
-    //                    if (EsNumerico(textoSeparado[0]) && EsNumerico(textoSeparado[1]))
-    //                    {
-    //                        flag = true;
-    //                    }
-    //                }
-    //            }
-    //            catch
-    //            {
-    //                flag = false;
-    //            }
-
-    //            return flag;
-    //        }
-
-    //        /// <summary>
-    //        /// char  digito = Utils.Digito_Verificador("10459280");
-    //        /// </summary>
-    //        /// <param name="number"></param>
-    //        /// <returns></returns>
-    //        static public char Digito_Verificador(string number)
-    //        {
-    //            bool bErr = false;
-
-    //            if (number == "")
-    //                return ' ';
-    //            else
-    //            {
-    //                int largo, resto, suma = 0;
-    //                char ch;
-
-    //                largo = number.Length;
-    //                for (int i = 1; i <= largo; i++)
-    //                {
-    //                    ch = number[largo - i];
-    //                    bErr |= ((ch < '0') || (ch > '9'));
-    //                    suma = suma + ((ch - '0') * ((i - 5 + (i < 7 ? 6 : 0)) % 8));
-    //                }
-    //                if (bErr)
-    //                    return ' ';
-    //                resto = suma - ((int)(suma / 11)) * 11;
-    //                switch (resto)
-    //                {
-    //                    case 0: return '0';
-    //                    case 1: return 'K';
-    //                    default: return (char)('9' + 2 - resto);
-    //                }
-    //            }
-    //        }
-
-    //        /// <summary>
-    //        /// Método que retorna TRUE si la expresion es NUMERICA. En caso contrario devuelve FALSE.
-    //        /// </summary>
-    //        /// <param name="Expression"></param>
-    //        /// <returns></returns>
-    //        public static System.Boolean EsNumerico(System.Object Expression)
-    //        {
-    //            if (Expression == null || Expression is DateTime || Expression is Boolean)
-    //                return false;
-
-    //            if (Expression is Int16 || Expression is Int32 || Expression is Int64 || Expression is Decimal || Expression is Single || Expression is Double)
-    //                return true;
-
-    //            try
-    //            {
-    //                if (Expression is string)
-    //                    Double.Parse(Expression as string);
-    //                else
-    //                    Double.Parse(Expression.ToString());
-    //                return true;
-    //            }
-    //            catch { } // just dismiss errors but return false
-    //            return false;
-    //        }
-
-    //    }
-    //}
+//            double diasDesdeRecepcionSii = Math.Round((ahora - frSII).TotalDays, 0);
+//            if (diasDesdeRecepcionSii >= 8)
+//            {
+//                // _gestorLog.RegistrarLog(Enumeradores.EnumTiposLog.Info, "ObtieneFechaAcuseReciboMercancia IdDte[" + dte.IdDte + "] tiene [" + diasDesdeRecepcionSii + "] después de la recepción en el SII. FechaRecepcionSII [" + dte.FechaRecepcionSII + "]");
+//                //Al octavo día se asume aceptada si no hay reclamo
+//                var fechaAceptacionAutomatica = frSII.AddDays(8);
+//                //Si el día de aceptación automática es específicamente el día 31 del mes, la contabilización es al mes siguiente,
+//                //por lo tanto se retorna un día adicional. Día 1 del mes siguiente
+//                if (fechaAceptacionAutomatica.Day == 31)
+//                {
+//                    DateTime fechaAceptacionAutomaticaNew = fechaAceptacionAutomatica.AddDays(1);
+//                    //_gestorLog.RegistrarLog(Enumeradores.EnumTiposLog.Info, "ObtieneFechaAcuseReciboMercancia IdDte[" + dte.IdDte + "] - Se asigna fechaAceptacionAutomatica a [" + fechaAceptacionAutomaticaNew + "] dado que fechaAceptacionAutomatica [" + fechaAceptacionAutomatica + "] cae 31 del mes");
+
+//                    //return fechaAceptacionAutomaticaNew;
+//                }
+
+//                //return fechaAceptacionAutomatica;
+//            }
+//        }
+
+//        public static bool IsDivisible(long Number, int min, int max)
+//        {
+//            for (int j = min; j < max + 1; j++)
+//            {
+//                if (Number % j != 0)
+//                    return false;
+//            }
+
+//            return true;
+//        }
+
+
+
+
+//        //WLS 07-04-2017: Se debe validar el formato de la linea de texto para el reemplazo del ITEM.
+//        /// <summary>
+//        /// Método para validación 
+//        /// </summary>
+//        /// <param name="lineaTexto"></param>
+//        /// <returns></returns>
+//        public static bool LineaTextoValida(string lineaTexto)
+//        {
+//            bool flag = false;
+//            string[] textoSeparado = null;
+//            try
+//            {
+//                //Primero se va a validar la cantidad de separadores de texto. el Formato es NN/PPPPPP/Descripcion
+//                textoSeparado = lineaTexto.Split('/');
+//                //Validación de separador
+//                if (textoSeparado.Length == 3)
+//                {
+//                    if (EsNumerico(textoSeparado[0]) && EsNumerico(textoSeparado[1]))
+//                    {
+//                        flag = true;
+//                    }
+//                }
+//            }
+//            catch
+//            {
+//                flag = false;
+//            }
+
+//            return flag;
+//        }
+
+//        /// <summary>
+//        /// char  digito = Utils.Digito_Verificador("10459280");
+//        /// </summary>
+//        /// <param name="number"></param>
+//        /// <returns></returns>
+//        static public char Digito_Verificador(string number)
+//        {
+//            bool bErr = false;
+
+//            if (number == "")
+//                return ' ';
+//            else
+//            {
+//                int largo, resto, suma = 0;
+//                char ch;
+
+//                largo = number.Length;
+//                for (int i = 1; i <= largo; i++)
+//                {
+//                    ch = number[largo - i];
+//                    bErr |= ((ch < '0') || (ch > '9'));
+//                    suma = suma + ((ch - '0') * ((i - 5 + (i < 7 ? 6 : 0)) % 8));
+//                }
+//                if (bErr)
+//                    return ' ';
+//                resto = suma - ((int)(suma / 11)) * 11;
+//                switch (resto)
+//                {
+//                    case 0: return '0';
+//                    case 1: return 'K';
+//                    default: return (char)('9' + 2 - resto);
+//                }
+//            }
+//        }
+
+//        /// <summary>
+//        /// Método que retorna TRUE si la expresion es NUMERICA. En caso contrario devuelve FALSE.
+//        /// </summary>
+//        /// <param name="Expression"></param>
+//        /// <returns></returns>
+//        public static System.Boolean EsNumerico(System.Object Expression)
+//        {
+//            if (Expression == null || Expression is DateTime || Expression is Boolean)
+//                return false;
+
+//            if (Expression is Int16 || Expression is Int32 || Expression is Int64 || Expression is Decimal || Expression is Single || Expression is Double)
+//                return true;
+
+//            try
+//            {
+//                if (Expression is string)
+//                    Double.Parse(Expression as string);
+//                else
+//                    Double.Parse(Expression.ToString());
+//                return true;
+//            }
+//            catch { } // just dismiss errors but return false
+//            return false;
+//        }
+
+//    }
+//}
 
 
 

@@ -1,15 +1,17 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Text;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 
 namespace ConsoleApp_Net8;
 
 public class RestAPI
 {
-    public async Task GetRestData()
+    public async Task<string> GetRestData()
     {
         try
         {
@@ -29,13 +31,28 @@ public class RestAPI
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                 HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Get, url);
+                HttpResponseMessage response = null;
 
-                HttpResponseMessage output = await client.GetAsync(url);
+                bool isPost = false;
+                if (isPost)
+                {
+                    object? bodyExample = "demo de body";
+                    string jsonObject = string.Empty;
+                    jsonObject = JsonConvert.SerializeObject(bodyExample);
+                    request.Content = new StringContent(jsonObject, Encoding.UTF8, "application/json");
+                    response = await client.PostAsync(url, request.Content);
+                }
+                else
+                    response = await client.GetAsync(url);
+
+                string content = await response.Content.ReadAsStringAsync();
+
+                return content;
             }
         }
         catch (Exception ex)
         {
-            var message = ex.Message;
+            return ex.Message;
         }
     }
 }
