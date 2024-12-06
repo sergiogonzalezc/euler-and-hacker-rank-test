@@ -1,4 +1,4 @@
-My implementation of Euler projects (https://projecteuler.net/) and HackerRank (https://www.hackerrank.com/) coding testing and challenges, like a::
+Some of solved problem of Euler challenges (https://projecteuler.net/) and HackerRank (https://www.hackerrank.com/) coding testing and challenges, like a:
 
 
 **Cases:**
